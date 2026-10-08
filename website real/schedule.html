@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>schedule</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="wrap">
+                <a class="logo" href="index.html">Family Dinner!</a>
+                <nav>
+                    <a href="index.html">about</a>
+                    <a href="menu.html">menu</a>
+                    <a href="schedule.html">schedule</a>
+                    <a href="notes.html">notes</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+
+            <h1 class="page-title">Schedule</h1>
+            <p>click any date with a dot to see notes from that night!</p>
+
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button id="prev-month">‹</button>
+                    <div id="month-year"></div>
+                    <button id="next-month">›</button>
+                </div>
+                <div class="calendar-body">
+                    <div class="calendar-weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thur</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="calendar-dates"></div>
+                </div>
+            </div>
+
+            <div id="entry-modal" class="modal hidden">
+                <div class="modal-content">
+                    <button class="close-btn" id="close-modal">&times;</button>
+                    <h2 id="modal-date"></h2>
+                    <form id="entry-form">
+                    
+                        <label for="entry-title">title</label>
+                        <input type="text" id="entry-title" placeholder="Dinner with...">
+ 
+                        <label for="entry-time">time</label>
+                        <input type="time" id="entry-time">
+ 
+                        <label for="entry-notes">notes</label>
+                        <textarea id="entry-notes" rows="3"></textarea>
+ 
+                        <button type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+        <footer class="site-footer">
+            <p>© 2026 Hannah La Porte</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

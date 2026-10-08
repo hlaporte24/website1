@@ -1,0 +1,484 @@
+/*  reset  */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, p, ul, ol, form {
+  margin: 0;
+}
+
+figure {
+    margin-bottom: 30px;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button, input, textarea {
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #2b2620;
+  background: #fffaf1;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: #2b2620;
+}
+
+/*  shared layout  */
+
+.wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.container {
+  max-width: 700px;
+  margin-inline: auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+main section + section,
+main > h1 + p,
+main > p + * {
+  margin-top: 2.5rem;
+}
+
+main h2 {
+  font-family: "Neuton", serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+main p {
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  max-width: 65ch;
+}
+
+/*  header  */
+
+.site-header {
+  background-color: #E9B44C;
+  padding-block: 1.5rem;
+}
+
+.logo {
+  font-family: "Neuton", serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #2b2620;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.site-header nav a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.site-header nav a:hover {
+  text-decoration: underline;
+}
+
+/*  footer  */
+
+.site-footer {
+  background: #5C415D;
+  color: #fffaf1;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/*  hero (home page) */
+
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 16, 10, 0.55);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  color: #E9B44C;
+}
+
+.hero-content h1 {
+  font-family: "Neuton", serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: rgba(250, 243, 231, 0.9);
+  margin-bottom: 2rem;
+  max-width: none;
+}
+
+.btn {
+  display: inline-block;
+  background: #e8a93b;
+  color: #2b2620;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+}
+
+.btn:hover {
+  background: #f3c877;
+}
+
+/* generic page heading  */
+
+.page-title {
+  font-family: "Neuton", serif;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+/*  highlight list (home page)  */
+
+.highlight-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #e7ddc8;
+}
+
+.highlight-list li strong {
+  font-family: "Neuton", serif;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+/*  photo gallery  */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.gallery figcaption {
+  font-size: 0.8rem;
+  color: #6b6358;
+  margin-top: 0.4rem;
+}
+
+/*  calendar  */
+
+.calendar {
+  width: 100%;
+  max-width: 350px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.calendar-header button {
+  background-color: transparent;
+  border: none;
+  font-size: medium;
+  cursor: pointer;
+}
+
+#month-year {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.calendar-weekdays, .calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+}
+
+.calendar-weekdays div, .calendar-dates div {
+  text-align: center;
+  padding: 10px;
+}
+
+.calendar-weekdays {
+  background-color: #D1D5DE;
+}
+
+.calendar-weekdays div {
+  font-weight: bold;
+}
+
+.calendar-dates div {
+  border-bottom: 1px solid #D1D5DE;
+  cursor: pointer;
+}
+
+.calendar-dates div:hover {
+  background-color: #f1f1f1;
+}
+
+.calendar-dates .has-entry {
+  position: relative;
+  font-weight: 600;
+}
+.calendar-dates .has-entry::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #d35400;
+  border-radius: 50%;
+  margin: 2px auto 0;
+}
+
+/*  modals */
+
+.modal, .modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden, .modal-overlay.hidden {
+  display: none;
+}
+
+.modal-content, .modal-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  line-height: 1;
+}
+
+/*  forms  */
+
+form label {
+  display: block;
+  margin-top: 0.75rem;
+  font-weight: 500;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #f5f5f5;
+}
+
+form button:hover {
+  background: #eaeaea;
+}
+
+.form-prompt {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 0.2rem;
+}
+
+/*  buttons (recipe book nav buttons)  */
+
+.button-row {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.button-row button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #f5f5f5;
+}
+
+.button-row button:hover {
+  background: #eaeaea;
+}
+
+/*  recipe display  */
+
+#recipe-display {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  min-height: 140px;
+}
+
+#recipe-ingredients li {
+  margin-bottom: 0.4rem;
+}
+
+#recipe-steps li {
+  margin-bottom: 0.75rem;
+}
+
+/*  tables (recipe overview, contact hours)  */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e7ddc8;
+}
+
+th {
+  background: #f4ead1;
+}
+
+/*  responsive  */
+
+@media (max-width: 480px) {
+  .site-header .wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .site-header nav {
+    gap: 1rem;
+  }
+
+  .hero {
+    min-height: 50vh;
+  }
+
+  .container {
+    padding: 1.75rem 1.25rem 3rem;
+  }
+
+  th, td {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}

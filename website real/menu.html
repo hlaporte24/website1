@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>menu</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="wrap">
+                <a class="logo" href="index.html">Family Dinner!</a>
+                <nav>
+                    <a href="index.html">about</a>
+                    <a href="menu.html">menu</a>
+                    <a href="schedule.html">schedule</a>
+                    <a href="notes.html">notes</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+
+            <h1 class="page-title">recipe book</h1>
+            <p>everything we've ever made at family dinner!</p>
+
+            <div id="recipe-display">
+                <h2 id="recipe-title"></h2>
+
+                <p><strong>Ingredients:</strong></p>
+                <ul id="recipe-ingredients"></ul>
+
+                <p><strong>Steps:</strong></p>
+                <ol id="recipe-steps"></ol>
+            </div>
+
+            <div class="button-row">
+                <button id="next-btn">next recipe</button>
+                <button id="add-recipe-btn">add a recipe</button>
+            </div>
+
+            <!--modal mock-->
+
+            <div class="modal-overlay hidden" id="add-recipe-overlay">
+                <div class="modal-box">
+                    <button class="close-btn" id="close-add-recipe">&times;</button>
+                    <h2>add a recipe</h2>
+
+                    <form id="add-recipe-form">
+                        <label for="new-title">title</label>
+                        <input type="text" id="new-title">
+
+                        <label for="new-ingredients">ingredients</label>
+                        <p class="form-prompt">one per line</p>
+                        <textarea id="new-ingredients" rows="4"></textarea>
+
+                        <label for="new-steps">steps</label>
+                        <p class="form-prompt">one per line</p>
+                        <textarea id="new-steps" rows="4"></textarea>
+
+                        <button type="submit">add recipe</button>
+
+
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Hannah La Porte</p>
+        </footer>
+
+        <script src="recipescript.js"></script>
+    </body>
+</html>
